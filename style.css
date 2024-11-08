@@ -1,0 +1,139 @@
+@font-face {
+  font-family: johnston;
+  src: url(Johnston100.ttf);
+}
+@font-face {
+  font-family: johnston_bold;
+  src: url(Johnston100_bold.ttf);
+}
+
+body {
+  font-family: johnston;
+  /* background-color: bisque; */
+}
+
+h1,
+h2,
+label {
+  color: #000f9f;
+  margin: 0;
+}
+
+#landing {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  top: 0;
+  left: 0;
+  padding-top: 8vw;
+}
+#landing h1,
+#landing h2 {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+}
+#roundel {
+  position: fixed;
+  width: 30vw;
+  left: 35vw;
+  bottom: 40px;
+}
+#load {
+  position: fixed;
+  background-color: #000f9f;
+  height: 29vw;
+  left: 35vw;
+  bottom: 45px;
+}
+
+#title {
+  font-size: 300%;
+}
+#timeText {
+  margin-bottom: 10px;
+}
+
+svg {
+  position: absolute;
+  left: 5vw;
+  bottom: 8vh;
+  /* background-color: white; */
+  border-radius: 5px;
+  z-index: -1;
+}
+tooltip {
+  position: absolute;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  /* min-width: 70px; */
+  z-index: 1;
+}
+
+.axis {
+  font: 16px johnston_bold;
+  color: #323e48;
+}
+
+#line_map {
+  position: absolute;
+  bottom: 2vh;
+  left: 8.5vw;
+  width: 81vw;
+  height: 5vh;
+  z-index: -1;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  /* body {
+    background-color: blue;
+  } */
+  #line_map {
+    left: 9vw;
+    width: 80vw;
+  }
+  #roundel {
+    width: 40vw;
+    left: 30vw;
+    bottom: 50px;
+  }
+  #load {
+    height: 39vw;
+    left: 30vw;
+    bottom: 55px;
+  }
+  #landing {
+    padding-top: 10vw;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  /* body {
+    background-color: red;
+  } */
+  #line_map {
+    left: 11.5vw;
+    width: 78vw;
+  }
+  #roundel {
+    width: 55vw;
+    left: 22.5vw;
+  }
+  #load {
+    height: 54vw;
+    left: 22.5vw;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .info h1,
+  .info h2 {
+    display: inline;
+    padding-right: 10px;
+  }
+}

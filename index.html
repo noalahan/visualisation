@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TFL Population</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/logo.png" type="image/png" />
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="landing">
+      <h1>TFL Tube Population</h1>
+      <h2>
+        This website visualizes TFL's daily tube population data 
+        from 2022. After choosing a tube line, click the play
+        button to animate the graph for changes over time or
+        select a specific day and time. For additional information,
+        hover over a bar to see what station it corresponds to
+        and find out more about it. Click the roundel to continue...
+      </h2>
+      <div id="load"></div>
+      <img id="roundel" src="img/roundel.png" />
+      <img id="roundel" class="ready" src="img/btn.png"></button>
+    </div>
+
+    <!-- For tube name and time of week -->
+    <div class="info">
+      <h1 id="title"></h1>
+      <h2 id="timeText"></h2>
+    </div>
+
+    <!-- tube lines drop down menu -->
+    <label for="lineSelect">Choose a Line:</label><br />
+    <select name="line" id="lineSelect">
+      <option value="" disabled selected>Select</option>
+      <option value="bak">Bakerloo</option>
+      <option value="cen">Central</option>
+      <option value="cir">Circle</option>
+      <option value="dis">District</option>
+      <option value="hac">Hammersmith & City</option>
+      <option value="jub">Jubilee</option>
+      <option value="met">Metropolitan</option>
+      <option value="nor">Northern</option>
+      <option value="pic">Piccadilly</option>
+      <option value="vic">Victoria</option>
+      <option value="wac">Waterloo & City</option>
+    </select>
+
+    <!-- for animation -->
+    <button id="play">play</button>
+    <button id="stop">stop</button>
+
+    <div id="time">
+      <label>Choose Time (optional):</label><br />
+      <!-- Day select -->
+      <label for="daySelect">Day:</label>
+      <select name="day" id="daySelect">
+        <option value="" disabled selected>Select</option>
+        <option value="0">Monday</option>
+        <option value="6">Tuesday/Wednesday/Thursday</option>
+        <option value="12">Friday</option>
+        <option value="18">Saturday</option>
+        <option value="24">Sunday</option>
+      </select>
+      <!-- Time select -->
+      <label for="timeSelect">Time:</label>
+      <select name="time" id="timeSelect">
+        <option value="" disabled selected>Select</option>
+        <option value="0">5:00 - 7:00</option>
+        <option value="1">7:00 - 10:00 (peak)</option>
+        <option value="2">10:00 - 16:00</option>
+        <option value="3">16:00 - 19:00 (peak)</option>
+        <option value="4">19:00 - 22:00</option>
+        <option value="5">22:00 - 5:00</option>
+      </select>
+    </div>
+
+    <img id="line_map" />
+    <div id="svg_div"></div>
+    <script src="script.js"></script>
+
+    <!-- <div>
+      Icons made from
+      <a href="https://www.onlinewebfonts.com/icon">svg icons</a>is licensed by
+      CC BY 4.0
+    </div> -->
+  </body>
+</html>
