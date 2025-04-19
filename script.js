@@ -378,6 +378,11 @@ $(document).ready(function () {
     size = "l";
   }
 
+  // info
+  $(".dropdown").click(function () {
+    $(".dropdown-content").toggle();
+  });
+
   // set up svg
   var margin = 35,
     w = $(document).width() * 0.85 - margin,
@@ -400,6 +405,7 @@ $(document).ready(function () {
       return i !== 0 ? `${x / 1000}k` : null;
     }); // removes 0 and formats in k
 
+  let roundelW = $("#landing img").width() * 0.99;
   /**
    * Gets TFL data from API
    */
@@ -429,7 +435,7 @@ $(document).ready(function () {
     } catch (err) {
       console.log(err);
     }
-    $("#load").width($("#landing img").width() * 0.1);
+    $("#load").width(roundelW * 0.1);
 
     // MONDAY EXITS
     try {
@@ -451,7 +457,7 @@ $(document).ready(function () {
     } catch (err) {
       console.log(err);
     }
-    $("#load").width($("#landing img").width() * 0.2);
+    $("#load").width(roundelW * 0.2);
 
     // TUESDAY/WEDNESDAY/THURSDAY ENTRIES
     try {
@@ -473,7 +479,7 @@ $(document).ready(function () {
     } catch (err) {
       console.log(err);
     }
-    $("#load").width($("#landing img").width() * 0.3);
+    $("#load").width(roundelW * 0.3);
 
     // TUESDAY/WEDNESDAY/THURSDAY EXITS
     try {
@@ -495,7 +501,7 @@ $(document).ready(function () {
     } catch (err) {
       console.log(err);
     }
-    $("#load").width($("#landing img").width() * 0.4);
+    $("#load").width(roundelW * 0.4);
 
     // FRIDAY ENTRIES
     try {
@@ -517,7 +523,7 @@ $(document).ready(function () {
     } catch (err) {
       console.log(err);
     }
-    $("#load").width($("#landing img").width() * 0.5);
+    $("#load").width(roundelW * 0.5);
 
     // FRIDAY EXITS
     try {
@@ -539,7 +545,7 @@ $(document).ready(function () {
     } catch (err) {
       console.log(err);
     }
-    $("#load").width($("#landing img").width() * 0.6);
+    $("#load").width(roundelW * 0.6);
 
     // SATURDAY ENTRIES
     try {
@@ -561,7 +567,7 @@ $(document).ready(function () {
     } catch (err) {
       console.log(err);
     }
-    $("#load").width($("#landing img").width() * 0.7);
+    $("#load").width(roundelW * 0.7);
 
     // SATURDAY EXITS
     try {
@@ -583,7 +589,7 @@ $(document).ready(function () {
     } catch (err) {
       console.log(err);
     }
-    $("#load").width($("#landing img").width() * 0.8);
+    $("#load").width(roundelW * 0.8);
 
     // SUNDAY ENTRIES
     try {
@@ -605,7 +611,7 @@ $(document).ready(function () {
     } catch (err) {
       console.log(err);
     }
-    $("#load").width($("#landing img").width() * 0.9);
+    $("#load").width(roundelW * 0.9);
 
     // SUNDAY EXITS
     try {
@@ -632,7 +638,7 @@ $(document).ready(function () {
     interchanges();
 
     // loading anim
-    $("#load").width($("#landing img").width());
+    $("#load").width(roundelW);
     setTimeout(getCode, 30);
   }
 
@@ -735,7 +741,7 @@ $(document).ready(function () {
 
       for (let j = 0; j < stations.length; j++) {
         const station = getStation(stations[j]);
-        station.lines.push(lines[i].color)
+        station.lines.push(lines[i].color);
       }
     }
   }
@@ -745,12 +751,12 @@ $(document).ready(function () {
    * @param   {[String]} lines Station connections list
    * @returns {String}         HTML string for images
    */
-  function getImages(lines){
-    str = "</br>Interchanges: "
+  function getImages(lines) {
+    str = "</br>Interchanges: ";
     for (let i = 0; i < lines.length; i++) {
-      str += "<span style='color: "+lines[i]+";'>#</span>"
+      str += "<span style='color: " + lines[i] + ";'>#</span>";
     }
-    return str
+    return str;
   }
 
   /**
@@ -847,7 +853,13 @@ $(document).ready(function () {
     };
     var mousemove = function (d) {
       Tooltip.html(
-        "Station: " + d.station + "</br>Zone: " + d.zone + "</br>Count: " + d.count[index] + getImages(d.lines)
+        "Station: " +
+          d.station +
+          "</br>Zone: " +
+          d.zone +
+          "</br>Count: " +
+          d.count[index] +
+          getImages(d.lines)
       )
         .style("left", d3.mouse(this)[0] + 70 + "px")
         .style("top", d3.mouse(this)[1] + "px");

@@ -9,14 +9,52 @@
 
 body {
   font-family: johnston;
-  /* background-color: bisque; */
+  font-size:x-large;
 }
 
+/* --- info --- */
+.dropdown{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+}
+.dropdown-content{
+  display: none;
+  position: absolute;
+  right: 0;
+
+  min-width: 40vw;
+  min-height: 30vh;
+  background-color: white;
+
+  border-radius: 10px;
+  border-color: #0079c4;
+  border-style: solid;
+  border-width: 3px;
+
+  padding: 30px 10px 20px 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+  text-align: center;
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+a{
+  display: block;
+  padding-top: 10px;
+}
+
+/* --- Landing --- */
 h1,
 h2,
 label {
   color: #000f9f;
   margin: 0;
+}
+h2 {
+  padding-top: 10px;
 }
 
 #landing {
@@ -27,6 +65,7 @@ label {
   top: 0;
   left: 0;
   padding-top: 8vw;
+  font-size: medium;
 }
 #landing h1,
 #landing h2 {
@@ -44,17 +83,24 @@ label {
   position: fixed;
   background-color: #000f9f;
   height: 29vw;
-  left: 35vw;
+  left: 35.05vw;
   bottom: 45px;
 }
 
+/* --- webpage --- */
 #title {
-  font-size: 300%;
+  font-size: 250%;
 }
 #timeText {
   margin-bottom: 10px;
 }
+.info h1,
+.info h2 {
+  display: inline;
+  padding-right: 10px;
+}
 
+/* --- bar graph --- */
 svg {
   position: absolute;
   left: 5vw;
@@ -71,6 +117,7 @@ tooltip {
   padding: 5px;
   /* min-width: 70px; */
   z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .axis {
@@ -87,6 +134,7 @@ tooltip {
   z-index: -1;
 }
 
+/* --- resizing --- */
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
   /* body {
@@ -127,13 +175,5 @@ tooltip {
   #load {
     height: 54vw;
     left: 22.5vw;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .info h1,
-  .info h2 {
-    display: inline;
-    padding-right: 10px;
   }
 }
