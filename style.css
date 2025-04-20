@@ -82,7 +82,7 @@ h2 {
 #load {
   position: fixed;
   background-color: #000f9f;
-  height: 29vw;
+  height: 15vw;
   left: 35.05vw;
   bottom: 45px;
 }
@@ -150,9 +150,9 @@ tooltip {
     bottom: 50px;
   }
   #load {
-    height: 39vw;
-    left: 30vw;
-    bottom: 55px;
+    height: 20vw;
+    left: 30.05vw;
+    bottom: 60px;
   }
   #landing {
     padding-top: 10vw;
@@ -173,7 +173,7 @@ tooltip {
     left: 22.5vw;
   }
   #load {
-    height: 54vw;
-    left: 22.5vw;
+    height: 30vw;
+    left: 22.6vw;
   }
 }
